@@ -1,9 +1,8 @@
-服务于分帧后台的机器学习项目
+服务于图片分类的机器学习项目
+
+使用Keras框架，OpenCV，基于TensorFlow后端
 
 目前已经将一些CNN模型开发到我们自己的工程里面，使用者根据自己的想使用的模型，在run.sh中传入即可
-
-目前此服务已经对接在爱奇艺深度学习云中：
-http://jarvis.cloud.qiyi.domain/group/
 
 
 >目前支持的神经网络模型为以下几种:
@@ -54,14 +53,16 @@ opencv-python >= 3.4.0.12
 
 
 # 3.怎么用：
-目前已经对接深度学习云，推荐大家直接在爱奇艺云平台开展你的训练：
 
-使用jarvis训练数据需要做一些前期配置，请参考：
-http://jarvis.gitlab.qiyi.domain/jarvis/training/step-by-step.html
+按照上面工程树data下的train文件夹下的目录结构，区分类型放置你的训练集
+目前工程树结构是区分了10个类型
 
-远程ssh启动任务的命令行： ./jarvis create-gitlab-job <GitLab 项目 SSH 地址>
+运行train.py，开始进行训练，配置信息在config.py中
+
 
 预测数据：
+
+将被预测图片放到data文件夹下的test文件夹中
 
 运行：
 >python predict.py
